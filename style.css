@@ -80,6 +80,9 @@ nav ul li a:hover, a.active{
     font-size: 30px;
     margin-top: 15px;
 }
+.plus-minus-btn button:hover{
+    cursor: pointer;
+}
 
 .booking-form  .calculations{
     margin: 10px 0;
