@@ -50,11 +50,11 @@
             </div>
             <div class="input-group f-class">
                 <div>
-                    <label for="">First Class ($<span id="fist-class-price">150</span>)</label>
+                    <label for="">First Class ($<span id="first-class-price">150</span>)</label>
                     <input id="first-class-input" type="test" class="inp-style inp-width" value="1">
                 </div>
                 <div class="plus-minus-btn">
-                    <p> <button id="first-class-plus-btn">+</button> <button id="first-class-minus-btn">-</button> </p>
+                    <p> <button onclick="firstClassPrice(true);">+</button> <button onclick="firstClassPrice(false);">-</button> </p>
                 </div>
             </div>
             
@@ -64,7 +64,7 @@
                     <input id="economy-input" type="text" class="inp-style inp-width" value="1">
                 </div>
                 <div class="plus-minus-btn">
-                    <p> <button onclick="economyTicket(true);" id="economy-plus-btn">+</button> <button onclick="economyTicket(false);" id="economy-minus-btn">-</button> </p>
+                    <p> <button onclick="economyTicket(true);">+</button> <button onclick="economyTicket(false);">-</button> </p>
                 </div>
             </div>
             <div class="calculations">
@@ -106,18 +106,25 @@
 
 
     <script>
-        document.getElementById('first-class-plus-btn').addEventListener('click', function(){
+        function firstClassPrice(isTicketPrice){
             const firstClassInput = document.getElementById('first-class-input');
-            const fistClassInputValue = parseFloat(firstClassInput.value);
-            console.log(firstClassInput.value);
-        })
+            const firstClassInputValue = parseFloat(firstClassInput.value);
+            let firstClassNewInputValue = firstClassInputValue;
+            if(isTicketPrice == true){
+                firstClassNewInputValue = firstClassInputValue + 1;
+            }if(isTicketPrice == false && firstClassInputValue > 0){
+                firstClassNewInputValue = firstClassInputValue - 1;
+            }
+            firstClassInput.value = firstClassNewInputValue;
+            const firstClassPrice = firstClassNewInputValue * 150;
+            document.getElementById('first-class-price').innerHTML = firstClassPrice;
+        };
         
 
         function economyTicket(isTicketPrice){
             const economyInput = document.getElementById('economy-input');
             const economyInputValue = parseFloat(economyInput.value);
             let economyNewInputValue = economyInputValue;
-            // const economyNewInputValue = economyInputValue - 1;
             if(isTicketPrice == true){
                 economyNewInputValue = economyInputValue + 1;
             }if(isTicketPrice == false && economyInputValue > 0){
@@ -127,6 +134,23 @@
             const economyPrice = economyNewInputValue * 100;
             document.getElementById('economy-price').innerHTML = economyPrice;
         };
+
+        // document.getElementById('first-class-plus-btn').addEventListener('click', function(){
+        //     const firstClassInput = document.getElementById('first-class-input');
+        //     const firstClassInputValue = parseFloat(firstClassInput.value);
+        //     const firstClassNewInputValue = firstClassInputValue + 1;
+        //     firstClassInput.value = firstClassNewInputValue;
+        //     const firstClassPrice = firstClassNewInputValue * 150;
+        //     document.getElementById('first-class-price').innerHTML = firstClassPrice;
+        // });
+        // document.getElementById('first-class-minus-btn').addEventListener('click', function(){
+        //     const firstClassInput = document.getElementById('first-class-input');
+        //     const firstClassInputValue = parseFloat(firstClassInput.value);
+        //     const firstClassNewInputValue = firstClassInputValue - 1;
+        //     firstClassInput.value = firstClassNewInputValue;
+        //     const firstClassPrice = firstClassNewInputValue * 150;
+        //     document.getElementById('first-class-price').innerHTML = firstClassPrice;
+        // });
     </script>
     <!--Thank You-->
 </body>
