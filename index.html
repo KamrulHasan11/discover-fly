@@ -73,7 +73,7 @@
                         <p>Subtotal</p>
                     </div>
                     <div class="right">
-                        <p>$<span id="total-price">500</span></p>
+                        <p>$<span id="total-price">250</span></p>
                     </div>
                 </div>
 
@@ -82,7 +82,7 @@
                         <p>Charge 10% VAT</p>
                     </div>
                     <div class="right">
-                        <p>$50</p>
+                        <p id="total-vat">$25</p>
                     </div>
                 </div>
                 <hr>
@@ -91,7 +91,7 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p>$550</p>
+                        <p id="total-amount">$275</p>
                     </div>
                 </div>
             </div>
@@ -136,6 +136,11 @@
 
             const totalPrice = firstClassInput * 150 + economyInput * 100;
             document.getElementById('total-price').innerHTML = totalPrice;
+            
+            const vat = totalPrice * 0.1;
+            document.getElementById('total-vat').innerHTML = vat;
+            const totalAmount = totalPrice + vat;
+            document.getElementById('total-amount').innerHTML = totalAmount;
         }
 
 
@@ -188,5 +193,4 @@
     </script>
     <!--Thank You-->
 </body>
-
 </html>
