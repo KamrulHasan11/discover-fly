@@ -26,6 +26,7 @@
         </nav>
     </header>
 
+
     <!--Booking Section-->
     <main class="main-content container">
         <div class="booking-form">
@@ -105,7 +106,9 @@
     </section>
 
 
+    <!-- JavaScript Code Start From Here -->
     <script>
+        // All ticket handler price count
         function handleTicket(ticket, isTicketPrice){
             const ticketInput = document.getElementById(ticket + '-input');
             const ticketInputValue = parseFloat(ticketInput.value);
@@ -127,6 +130,7 @@
         };
 
 
+        // Total ticket handler count
         function calculateTotal(){
             const firstClassTicketInput = document.getElementById('first-class-input');
             const firstClassInput = parseFloat(firstClassTicketInput.value);
@@ -141,56 +145,8 @@
             document.getElementById('total-vat').innerHTML = vat;
             const totalAmount = totalPrice + vat;
             document.getElementById('total-amount').innerHTML = totalAmount;
-        }
-
-
-        // function firstClassPrice(isTicketPrice){
-        //     const firstClassInput = document.getElementById('first-class-input');
-        //     const firstClassInputValue = parseFloat(firstClassInput.value);
-        //     let firstClassNewInputValue = firstClassInputValue;
-        //     if(isTicketPrice == true){
-        //         firstClassNewInputValue = firstClassInputValue + 1;
-        //     }if(isTicketPrice == false && firstClassInputValue > 0){
-        //         firstClassNewInputValue = firstClassInputValue - 1;
-        //     }
-        //     firstClassInput.value = firstClassNewInputValue;
-        //     const firstClassPrice = firstClassNewInputValue * 150;
-        //     document.getElementById('first-class-price').innerHTML = firstClassPrice;
-        // };
-        
-        
-        // function economyTicket(isTicketPrice){
-        //     const economyInput = document.getElementById('economy-input');
-        //     const economyInputValue = parseFloat(economyInput.value);
-        //     let economyNewInputValue = economyInputValue;
-        //     if(isTicketPrice == true){
-        //         economyNewInputValue = economyInputValue + 1;
-        //     }if(isTicketPrice == false && economyInputValue > 0){
-        //         economyNewInputValue = economyInputValue - 1;
-        //     }
-        //     economyInput.value = economyNewInputValue;
-        //     const economyPrice = economyNewInputValue * 100;
-        //     document.getElementById('economy-price').innerHTML = economyPrice;
-        // };
-
-
-        // document.getElementById('first-class-plus-btn').addEventListener('click', function(){
-        //     const firstClassInput = document.getElementById('first-class-input');
-        //     const firstClassInputValue = parseFloat(firstClassInput.value);
-        //     const firstClassNewInputValue = firstClassInputValue + 1;
-        //     firstClassInput.value = firstClassNewInputValue;
-        //     const firstClassPrice = firstClassNewInputValue * 150;
-        //     document.getElementById('first-class-price').innerHTML = firstClassPrice;
-        // });
-        // document.getElementById('first-class-minus-btn').addEventListener('click', function(){
-        //     const firstClassInput = document.getElementById('first-class-input');
-        //     const firstClassInputValue = parseFloat(firstClassInput.value);
-        //     const firstClassNewInputValue = firstClassInputValue - 1;
-        //     firstClassInput.value = firstClassNewInputValue;
-        //     const firstClassPrice = firstClassNewInputValue * 150;
-        //     document.getElementById('first-class-price').innerHTML = firstClassPrice;
-        // });
+        };
     </script>
-    <!--Thank You-->
+    <!--Thank You so much to all of you who are checking my assignment. Thanks again-->
 </body>
 </html>
